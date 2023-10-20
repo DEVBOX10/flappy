@@ -15,10 +15,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf ./dist && yarn run -T tsc -p tsconfig.build.json"
+    "build": "yarn clean && yarn run -T tsc -p tsconfig.build.json",
+    "clean": "rm -rf ./dist",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@pleisto/flappy-nodejs-bindings": "^0.0.1-alpha.1",
+    "@pleisto/flappy-nodejs-bindings": "next",
     "radash": "^11.0.0",
     "zod": "^3.22.4",
     "zod-to-json-schema": "^3.21.4"
@@ -27,6 +30,8 @@
     "openai": "^4.11.1"
   },
   "devDependencies": {
-    "openai": "^4.11.1"
+    "@vitest/coverage-v8": "^0.34.6",
+    "openai": "^4.11.1",
+    "vitest": "^0.34.6"
   }
 }
